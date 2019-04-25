@@ -3,28 +3,20 @@
 #include <vector>
 using namespace std;
 
-bool isPrime(int n);
-vector<int> Primes(int n);
-int LargestPrimeFactor(int n);
+bool isPrime(long long int n);
+vector<int> Primes( long long int n);
+int LargestPrimeFactor(long long int n);
 
 int main(){
-    int n = 12;
-    //cout << n << " es primo ? " << isPrime(n) << endl;
-    vector<int> v = Primes(20);
-    for(int i = 0; i < v.size(); i++){
-        cout << v[i] << endl;
-    }
+    //long long int n = 600851475143;
+    long long int n = 1000000;
+    int x = LargestPrimeFactor(n);
+    cout << "divisor mas grande primo de " << n << ": " << x << endl;
 
-    int x = LargestPrimeFactor(15);
-    cout << "divisor mas grande primo: " << x << endl;
-
-    //int l = LargestPrimeFactor(n);
-    //cout << "Divisor primo mas grande de " << endl;
-    //cout << l <<  endl;
 
 }
 
-bool isPrime(int n){
+bool isPrime(long long int n){
     if(n <= 1){
         return false;
     }else
@@ -40,7 +32,7 @@ bool isPrime(int n){
     }
 
 }
-vector<int> Primes(int n){
+vector<int> Primes(long long int n){
     vector<int> v;
     for(int i = 2; i < n; i++){
         if(isPrime(i) == true){
@@ -51,16 +43,14 @@ vector<int> Primes(int n){
     return v;
 }
 
-int LargestPrimeFactor(int n){
+int LargestPrimeFactor(long long int n){
     //Retorna el divisor primo mas grande de n
     if(isPrime(n) == true){
       return -1;
     }
     vector<int> v = Primes(n);
     vector<int> div;
-    cout << "tamaño: " << v.size() << endl;
     for(int i = 0;i < v.size()-1; i++){
-        cout << "v[i]: " << v[i] << endl;
         if (n % v[i] == 0) {
             cout << v[i] << endl;
             div.push_back(v[i]);
