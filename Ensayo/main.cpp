@@ -6,6 +6,7 @@ using namespace std;
 bool isPrime(int n);
 vector<int> Primes(int n);
 int LargestPrimeFactor(int n);
+long int CribaEratostenes(long long int n);
 
 int main(){
     int n = 12;
@@ -69,5 +70,26 @@ int LargestPrimeFactor(int n){
     }
 
     return div[div.size()-1];
+
+}
+
+
+long int CribaEratostenes(long long int n){
+  //revisar TODO;
+  vector<bool> v;
+  //Suponemos que todos los enteros son primos
+  for(int i = 2; i < n i++){
+    v.push_back(true);
+  }
+  int idx = 0;
+  int div = v[idx];
+  while(v[idx] <= (n**0.5)){
+    for(int i = idx; i < n; i++){
+      if(n%v[i] == 0){
+
+      }
+    }
+
+  }
 
 }
